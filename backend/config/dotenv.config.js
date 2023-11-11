@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config()
 
 module.exports = {
   DB_HOST: process.env.DB_HOST,
@@ -8,4 +8,4 @@ module.exports = {
   DB_NAME: process.env.DB_NAME,
   CRYPT_SALT_ROUNDS: process.env.CRYPT_SALT_ROUNDS,
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
-};
+}
