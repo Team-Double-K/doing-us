@@ -53,13 +53,15 @@ class MainActivity : AppCompatActivity() {
 
         main_binding.searchRoom.setOnClickListener {
             startActivity(map_intent)
-
+//            registerroom_binding.btnroomRegister.setOnClickListener {
+//                //TODO: 레트로핏
+//            }
         }
 
 
         main_binding.registerRoom.setOnClickListener {
-            var register_intent = Intent(this, ActivityRegisterRoomBinding::class.java)
-            startActivity(register_intent)
+
+            setContentView(registerroom_binding.root)
 
         }
 

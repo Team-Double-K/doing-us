@@ -93,6 +93,7 @@ class MapActivity : AppCompatActivity() {
         mapView.setCalloutBalloonAdapter(CustomBalloonAdapter(layoutInflater))
 //        mapView.setPOIItemEventListener(eventListener)
         mapViewContainer.addView(mapView)
+        mapViewContainer.addView(mapView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
 
         // 줌 레벨 변경
         mapView.setZoomLevel(3, true)

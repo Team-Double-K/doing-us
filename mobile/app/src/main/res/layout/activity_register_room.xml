@@ -152,42 +152,95 @@
             </FrameLayout>
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/editText_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="3dp"
+            android:text="모임일자"
+            android:textColor="#0064FF"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal">
 
-            <FrameLayout
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
-                    android:layout_marginBottom="34dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="모임일자"
-                    android:textColor="#0064FF"
-                    android:textSize="18sp"  />
 
-                <DatePicker
-                    android:id="@+id/datePicker_meetdate"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:calendarViewShown="false"
-                    android:datePickerMode="spinner"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#0064FF"
-                    android:textColor="#0064FF"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal">
 
-            </FrameLayout>
+                    <CheckBox
+                        android:id="@+id/mondayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="월" />
 
+                    <CheckBox
+                        android:id="@+id/tuesdayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="화" />
+
+                    <CheckBox
+                        android:id="@+id/wednesdayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="수" />
+
+                    <CheckBox
+                        android:id="@+id/thursdayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="목" />
+
+                    <CheckBox
+                        android:id="@+id/fridayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="금" />
+
+                    <CheckBox
+                        android:id="@+id/saturdayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="토" />
+
+                    <CheckBox
+                        android:id="@+id/sundayCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="일" />
+                </LinearLayout>
+
+
+            </LinearLayout>
         </LinearLayout>
+
+
+
+
+
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -215,6 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="8dp"
+                    android:inputType="number"
                     android:backgroundTint="#0064FF"
                     android:layout_gravity="bottom"
                     android:textColor="#0064FF" />
