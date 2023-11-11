@@ -1,6 +1,10 @@
 package com.kim.hackathon
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.location.Location
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,6 +38,26 @@ class MapActivity : AppCompatActivity() {
     private var uLatitude : Double = 0.0
     private var uLongitude : Double = 0.0
    // private  val eventListener = MarkerEventListener(this)
+    //
+   //내 위치정보 얻어서 변수에 저장
+   @SuppressLint("MissingPermission")
+   private fun getCurrentLocation() {
+       val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+       try {
+           val userNowLocation: Location = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)!!
+           uLatitude = userNowLocation.latitude
+           uLongitude = userNowLocation.longitude
+       } catch (e: NullPointerException) {
+           Log.e("LOCATION_ERROR", e.toString())
+           finish()
+       }
+   }
+    //얻은 내 위치정보를 기준으로 지도를 저 중앙으로 이동시킴
+    private fun setCurrentLocaion() {
+        val uNowPosition = MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
+        mapView.setMapCenterPoint(uNowPosition, true)
+    }
+    //
 
 
 
@@ -49,6 +73,7 @@ class MapActivity : AppCompatActivity() {
 
 
 
+
     }
    // private fun postroom@@
 
@@ -59,12 +84,12 @@ class MapActivity : AppCompatActivity() {
 
 
 
-    private fun setCurrentLocaion() {
-        val uNowPosition = MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
-        mapView.setMapCenterPoint(uNowPosition, true)
-
-        Log.d("Map", "${uLatitude}, ${uLongitude}")
-    }
+//    private fun setCurrentLocaion() {
+//        val uNowPosition = MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
+//        mapView.setMapCenterPoint(uNowPosition, true)
+//
+//        Log.d("Map", "${uLatitude}, ${uLongitude}")
+//    }
 
     class CustomBalloonAdapter(inflater: LayoutInflater): CalloutBalloonAdapter {
         val mCalloutBalloon: View = inflater.inflate(R.layout.activity_ballon,null)
@@ -91,9 +116,7 @@ class MapActivity : AppCompatActivity() {
     fun initMapView() {
         mapView = MapView(this)
         mapView.setCalloutBalloonAdapter(CustomBalloonAdapter(layoutInflater))
-//        mapView.setPOIItemEventListener(eventListener)
         mapViewContainer.addView(mapView)
-        mapViewContainer.addView(mapView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
 
         // 줌 레벨 변경
         mapView.setZoomLevel(3, true)

@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var map_intent = Intent(this, MapActivity::class.java)
+        var register_intent = Intent(this, RegisterRoomActivity::class.java)
         var myRoom_intent = Intent(this, MyRoom::class.java)
         login_binding = ActivityLoginBinding.inflate(layoutInflater)
         main_binding = ActivityMainBinding.inflate(layoutInflater) //main_binding
@@ -53,15 +54,14 @@ class MainActivity : AppCompatActivity() {
 
         main_binding.searchRoom.setOnClickListener {
             startActivity(map_intent)
-//            registerroom_binding.btnroomRegister.setOnClickListener {
+
 //                //TODO: 레트로핏
-//            }
+
         }
 
 
         main_binding.registerRoom.setOnClickListener {
-
-            setContentView(registerroom_binding.root)
+            startActivity(register_intent)
 
         }
 

@@ -15,6 +15,7 @@
         android:textColor="#0064FF"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -185,49 +186,63 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="월" />
+                        android:text="월"
+                        android:layoutDirection="rtl"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
                         android:id="@+id/tuesdayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="화" />
+                        android:text="화"
+                        android:layoutDirection="rtl"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
+                        android:layoutDirection="rtl"
                         android:id="@+id/wednesdayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="수" />
+                        android:text="수"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
+                        android:layoutDirection="rtl"
                         android:id="@+id/thursdayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="목" />
+                        android:text="목"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
+                        android:layoutDirection="rtl"
                         android:id="@+id/fridayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="금" />
+                        android:text="금"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
+                        android:layoutDirection="rtl"
                         android:id="@+id/saturdayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="토" />
+                        android:text="토"
+                        android:buttonTint="#0064FF"/>
 
                     <CheckBox
+                        android:layoutDirection="rtl"
                         android:id="@+id/sundayCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
-                        android:text="일" />
+                        android:text="일"
+                        android:buttonTint="#0064FF"/>
                 </LinearLayout>
 
 

@@ -30,14 +30,14 @@ class RegisterRoomActivity : AppCompatActivity() {
         setContentView(register_room_binding.root)
 
 //
-        setContentView(main_binding.root)
         apiService = com.kim.hackathon.config.init()
 
         register_room_binding.locationSearch.setOnClickListener {
-//            var  = Intent(this, MapActivity::class.java)
-//
-       }
+            var searchmapIntent  = Intent(this, SearchMapActivity::class.java)
+            startActivity(searchmapIntent)
 
+
+       }
 
 
         main_binding.registerRoom.setOnClickListener {
@@ -47,7 +47,8 @@ class RegisterRoomActivity : AppCompatActivity() {
             //val input_latitude:Double? = = //TODO : 위치에서 찍은걸로 가져오기
             val input_date: String? = getMeetDay()
             Log.d("date", "${input_date}")
-            var input_headcount:Int? = register_room_binding.editTextHeadcount.text.toString().toInt()
+//            var input_headcount:Int? = register_room_binding.editTextHeadcount.text.get()
+            var input_headcount: Int? = register_room_binding.editTextHeadcount.text.toString().toIntOrNull()
 
 
             //val roomRequestVO: RoomVO? =  RoomVO()//TODO : 인자 다 줘야함
