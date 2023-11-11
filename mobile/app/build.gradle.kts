@@ -60,4 +60,5 @@ dependencies {
     //카카오맵
     implementation(files("libs/libDaumMapAndroid.jar"))
     implementation("com.google.android.gms:play-services-maps:18.2.0")
+//    implementation ("net.daum.android:daum-map-sdk:5.0.2")
 }

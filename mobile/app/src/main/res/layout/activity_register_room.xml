@@ -5,13 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    var ownerId:String?,
-    var title:String?,
-    var comments:String?,
-    var longitude:Double?,
-    var latitude:Double?,
-    var meetDate:String?,
-    var headcount:Int?
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -142,7 +136,7 @@
                     android:textColorHint="#7D8ED4" />
 
                 <Button
-                    android:id="@+id/btnCheckId_Reg"
+                    android:id="@+id/location_search"
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:layout_gravity="right|center"
@@ -231,7 +225,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnroomRegister"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:text="완료"

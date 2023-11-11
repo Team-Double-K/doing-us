@@ -1,5 +1,8 @@
 package com.kim.hackathon
 
+import ListAdapter
+import ListLayout
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,58 +11,65 @@ import com.kakao.util.maps.helper.Utility
 import com.kim.hackathon.databinding.ActivityLoginBinding
 import com.kim.hackathon.databinding.ActivityMainBinding
 import com.kim.hackathon.databinding.ActivityMapBinding
-//import com.kim.hackathon.databinding.ActivityRegisterBinding
+import com.kim.hackathon.databinding.ActivityRegisterRoomBinding
 import com.kim.hackathon.utils.ApiService
 import com.kim.hackathon.vo.UserVO
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     lateinit var apiService:ApiService
     lateinit var login_binding:ActivityLoginBinding
     lateinit var main_binding:ActivityMainBinding
-//    lateinit var register_binding:ActivityRegisterBinding
+    lateinit var registerroom_binding:ActivityRegisterRoomBinding
     lateinit var map_binding:ActivityMapBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        //
-        Log.d("a", "keyhash : ${Utility.getKeyHash(this)}")
+    private val listItems = arrayListOf<ListLayout>() // 리사이클러 뷰 아이템
+    private val listAdapter = ListAdapter(listItems) // 리사이클러 뷰 어댑터
+    private var pageNumber = 1 // 검색 페이지 번호
+    private var keyword = "" // 검색 키워드
 
-        //
-        login_binding = ActivityLoginBinding.inflate(layoutInflater)
-        main_binding = ActivityMainBinding.inflate(layoutInflater)
-//        register_binding = ActivityRegisterBinding.inflate(layoutInflater)
-        map_binding = ActivityMapBinding.inflate(layoutInflater)
+    companion object {
+        const val BASE_URL = "https://dapi.kakao.com/"
+        const val API_KEY = "KakaoAK 028459d34f4c5a732cb3562015fd8f82" // REST API 키
+    }
+
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var map_intent = Intent(this, MapActivity::class.java)
+        login_binding = ActivityLoginBinding.inflate(layoutInflater)
+        main_binding = ActivityMainBinding.inflate(layoutInflater) //main_binding
+        registerroom_binding = ActivityRegisterRoomBinding.inflate(layoutInflater)
+        map_binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(main_binding.root)
         apiService = com.kim.hackathon.config.init()
 
-        login_binding.btnLogin.setOnClickListener {
-            val input_userId:String? = login_binding.editTextId.text.toString()
-            val input_userPw:String? = login_binding.editTextPw.text.toString()
+        main_binding.searchRoom.setOnClickListener {
+            startActivity(map_intent)
 
-            val userRequestVO:UserVO? =  UserVO(input_userId, input_userPw)
-            login(userRequestVO)
         }
-        login_binding.btnRegister.setOnClickListener {
-            val register_intent = Intent(this, RegisterUserActivity::class.java)
+
+
+        main_binding.registerRoom.setOnClickListener {
+            var register_intent = Intent(this, ActivityRegisterRoomBinding::class.java)
             startActivity(register_intent)
+
         }
 
+
+
+
+
+
     }
 
-    private fun login(userRequestVO:UserVO?){
-        val call = apiService.login("url",userRequestVO)
-        call.enqueue(object: Callback<ResponseBody>{
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                //토큰날라오겠지 시발
-            }
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                //좇됨 ㅅtry
-            }
-        })
-    }
+
+
 
 
 }

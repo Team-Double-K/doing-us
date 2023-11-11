@@ -11,6 +11,7 @@ import android.widget.TextView
 
 import com.kim.hackathon.databinding.ActivityLoginBinding
 import com.kim.hackathon.databinding.ActivityMainBinding
+import com.kim.hackathon.databinding.ActivityMapBinding
 import com.kim.hackathon.utils.ApiService
 import com.kim.hackathon.vo.UserVO
 import net.daum.mf.map.api.MapView
@@ -24,8 +25,8 @@ import retrofit2.Response
 //TODO: 지도 띄우기
 class MapActivity : AppCompatActivity() {
     lateinit var apiService:ApiService
-    val login_binding = ActivityLoginBinding.inflate(layoutInflater)
-    val main_binding = ActivityMainBinding.inflate(layoutInflater)
+
+
 
     lateinit var mapView: MapView
     private lateinit var mapViewContainer : ViewGroup
@@ -38,8 +39,13 @@ class MapActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(login_binding.root)
+        val map_binding = ActivityMapBinding.inflate(layoutInflater)
+        setContentView(map_binding.root)
         apiService = com.kim.hackathon.config.init()
+
+        mapViewContainer = map_binding.mapViewContainer
+
+        initMapView()
 
 
 
@@ -93,4 +99,9 @@ class MapActivity : AppCompatActivity() {
     }
 
 
+
+
+
+
 }
+
