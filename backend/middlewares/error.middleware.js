@@ -3,5 +3,5 @@ module.exports = (err, req, res, next) => {
     .send({
       msg: err.message,
     })
-    .status(401);
-};
+    .status(401)
+}
