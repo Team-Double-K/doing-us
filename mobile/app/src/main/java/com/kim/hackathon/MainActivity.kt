@@ -3,6 +3,7 @@ package com.kim.hackathon
 import ListAdapter
 import ListLayout
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var map_intent = Intent(this, MapActivity::class.java)
+        var myRoom_intent = Intent(this, MyRoom::class.java)
         login_binding = ActivityLoginBinding.inflate(layoutInflater)
         main_binding = ActivityMainBinding.inflate(layoutInflater) //main_binding
         registerroom_binding = ActivityRegisterRoomBinding.inflate(layoutInflater)
@@ -61,7 +63,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
+        main_binding.manageMyroom.setOnClickListener {
+            startActivity(myRoom_intent)
+        }
 
 
 

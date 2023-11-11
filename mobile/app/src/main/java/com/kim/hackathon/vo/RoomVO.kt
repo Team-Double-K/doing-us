@@ -9,6 +9,13 @@ data class RoomVO (
     var meetDate:String?,
     var headcount:Int?
 )
+data class RoomVO2 (
+    var r_id:Int?,
+    var r_title:String?,
+    var r_comments:String?,
+    var r_meet_date:String?,
+    var r_headcount:Int?
+)
 
 /**
  *  r_id int not null auto_increment primary key,
