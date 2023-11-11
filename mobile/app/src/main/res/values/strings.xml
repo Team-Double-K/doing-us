@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">hackathon</string>
+    <string name="registration_successful">회원가입 되었습니다.</string>
+</resources>
