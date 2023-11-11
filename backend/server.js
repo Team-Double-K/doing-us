@@ -2,9 +2,17 @@ const express = require("express");
 const { connection } = require("./config/db.config");
 const apiRouter = require("./api/index");
 const errorMiddleware = require("./middlewares/error.middleware");
+const cors = require("cors");
 const app = express();
 const port = 8000;
 
+app.use(
+  cors({
+    sameSite: "none",
+    origin: true,
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api", apiRouter);
