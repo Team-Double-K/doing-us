@@ -1,5 +1,6 @@
 package com.kim.hackathon.utils
 import com.kim.hackathon.vo.RoomVO
+import com.kim.hackathon.vo.RoomVO2
 import com.kim.hackathon.vo.UserForJoinVO
 import com.kim.hackathon.vo.UserVO
 import okhttp3.ResponseBody
@@ -37,7 +38,7 @@ interface ApiService {
      * updateRoomByUserIdAndRoomId
      */
     @GET
-    fun findRoomOfUserByUserId(@Url url:String?):Call<ResponseBody>
+    fun findRoomOfUserByUserId(@Url url:String?, @Header("Authorization") token:String?):Call<ArrayList<RoomVO2>>
     @GET//url:8000/api/user/:userId/room/:roomId (콜론은 다 변수로 넣어 줘야 해 ~)
     fun findDetailOfRoomOfUserByUserIdAndRoomId(@Url url:String?):Call<ResponseBody>
     @POST
@@ -45,7 +46,11 @@ interface ApiService {
     @POST
     fun joinRoomByUserIdAndRoomId(@Url url: String?):Call<ResponseBody>
     @DELETE // 방삭제 TODO: OWNER만 수행가능
-    fun deleteRoomByUserIdAndRoomId(@Url url:String?):Call<ResponseBody>
+    fun deleteRoomByUserIdAndRoomId(@Url url:String?,@Header("Authorization") token:String?):Call<ResponseBody>
     @PUT // 방나가기 TODO: OWNER를 제외한 anyuser 다 가능
     fun updateOrExitRoomByUserIdAndRoomId(@Url url:String?):Call<ResponseBody>
+
+    /**
+     * room
+     */
 }
