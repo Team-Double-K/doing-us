@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kim.hackathon.config.LocationManger
 import com.kim.hackathon.databinding.ActivitySearchLocationBinding
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
@@ -27,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class SearchMapActivity : AppCompatActivity() {
 
-    lateinit var mapView: MapView
+//    lateinit var mapView: MapView
     private lateinit var mapViewContainer : ViewGroup
 
     private var uLatitude : Double = 0.0
@@ -43,13 +44,13 @@ class SearchMapActivity : AppCompatActivity() {
     private var pageNumber = 1 // 검색 페이지 번호
     private var keyword = "" // 검색 키워드
 
-    fun initMapView() {
-        mapView = MapView(this)
-        mapViewContainer.addView(mapView)
-
-        // 줌 레벨 변경
-        mapView.setZoomLevel(3, true)
-    }
+//    fun initMapView() {
+//        mapView = MapView(this)
+//        mapViewContainer.addView(mapView)
+//
+//        // 줌 레벨 변경
+//        mapView.setZoomLevel(3, true)
+//    }
 
 
     //내 위치정보 얻어서 변수에 저장
@@ -66,10 +67,10 @@ class SearchMapActivity : AppCompatActivity() {
         }
     }
     //얻은 내 위치정보를 기준으로 지도를 저 중앙으로 이동시킴
-    private fun setCurrentLocaion() {
-        val uNowPosition = MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
-        mapView.setMapCenterPoint(uNowPosition, true)
-    }
+//    private fun setCurrentLocaion() {
+//        val uNowPosition = MapPoint.mapPointWithGeoCoord(uLatitude, uLongitude)
+//        mapView.setMapCenterPoint(uNowPosition, true)
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,18 +78,22 @@ class SearchMapActivity : AppCompatActivity() {
         searchmapbinding = ActivitySearchLocationBinding.inflate(layoutInflater)
         setContentView(searchmapbinding.root)
 
-        initMapView()
-        getCurrentLocation()
-        setCurrentLocaion()
+        com.kim.hackathon.config.init()
+
 
 // 리사이클러 뷰
         searchmapbinding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         searchmapbinding.rvList.adapter = listAdapter
 // 리스트 아이템 클릭 시 해당 위치로 이동
-        listAdapter.setItemClickListener(object: ListAdapter.OnItemClickListener {
+        listAdapter.setItemClickListener(object: ListAdapter.OnItemClickListener {////@@@@@@@@@@@@@@@@
             override fun onClick(v: View, position: Int) {
                 val mapPoint = MapPoint.mapPointWithGeoCoord(listItems[position].y, listItems[position].x)
+                LocationManger.setPosition(listItems[position].x,listItems[position].y)
+                Log.d("rere", "${listItems[position].x}, ${listItems[position].y}")
+
                 searchmapbinding.mapView.setMapCenterPointAndZoomLevel(mapPoint, 1, true)
+
+
             }
         })
 

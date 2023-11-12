@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.kim.hackathon.config.LocationManger
 import com.kim.hackathon.databinding.ActivityMainBinding
 import com.kim.hackathon.databinding.ActivityRegisterRoomBinding
 import com.kim.hackathon.databinding.ActivityRegisterUserBinding
+import com.kim.hackathon.databinding.ListLayoutBinding
 //import com.kim.hackathon.databinding.ActivityRegisterBinding
 import com.kim.hackathon.utils.ApiService
 import com.kim.hackathon.vo.RoomVO
@@ -26,6 +28,7 @@ class RegisterRoomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val main_binding = ActivityMainBinding.inflate(layoutInflater)
+        val list_binding = ListLayoutBinding.inflate(layoutInflater)
         register_room_binding = ActivityRegisterRoomBinding.inflate(layoutInflater)
         setContentView(register_room_binding.root)
 
@@ -36,18 +39,26 @@ class RegisterRoomActivity : AppCompatActivity() {
             var searchmapIntent  = Intent(this, SearchMapActivity::class.java)
             startActivity(searchmapIntent)
 
-
        }
+        val regroombinding = ActivityRegisterRoomBinding.inflate(layoutInflater)
+        regroombinding.btnroomRegister.setOnClickListener { //완성으로
+            val currentPosition:List<Double> = LocationManger.getPosition()
+            val input_longitude:Double? = currentPosition.get(0)
+            val input_latitude:Double?= currentPosition.get(1)
+            Log.d("abab", "dddddddd")
+            Log.d("test11", "${input_longitude}, ${input_latitude}")
+
+        }
 
 
-        main_binding.registerRoom.setOnClickListener {
+        regroombinding.btnroomRegister.setOnClickListener {
             val input_title:String? = register_room_binding.editTextTitle.text.toString()
             val input_comments:String? = register_room_binding.editTextComments.text.toString()
-            //val input_longitude:Double? = //TODO : 위치에서 찍은걸로 가져오기
-            //val input_latitude:Double? = = //TODO : 위치에서 찍은걸로 가져오기
+            Log.d("test99", "${input_title}, ${input_comments}")
+
+
             val input_date: String? = getMeetDay()
             Log.d("date", "${input_date}")
-//            var input_headcount:Int? = register_room_binding.editTextHeadcount.text.get()
             var input_headcount: Int? = register_room_binding.editTextHeadcount.text.toString().toIntOrNull()
 
 
