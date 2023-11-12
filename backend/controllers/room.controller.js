@@ -9,6 +9,15 @@ const findRoom = async (req, res, next) => {
     next(err);
   }
 };
+const findRoomByRoomId = async (req, res, next) => {
+  try {
+    const { roomId } = req.params;
+    const result = await RoomService.findRoomByRoomId(roomId);
+    res.send(result);
+  } catch (err) {
+    next(err);
+  }
+};
 
 const findRoomOfUserByUserId = async (req, res, next) => {
   try {
@@ -125,4 +134,5 @@ module.exports = {
   joinRoomByUserIdAndRoomId: joinRoomByUserIdAndRoomId,
   deleteOrExitRoomByUserIdAndRoomId: deleteOrExitRoomByUserIdAndRoomId,
   updateRoomByUserIdAndRoomId: updateRoomByUserIdAndRoomId,
+  findRoomByRoomId: findRoomByRoomId,
 };
