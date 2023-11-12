@@ -15,6 +15,8 @@ import com.kim.hackathon.databinding.ActivityMapBinding
 import com.kim.hackathon.databinding.ActivityRegisterRoomBinding
 import com.kim.hackathon.utils.ApiService
 import com.kim.hackathon.vo.UserVO
+import net.daum.mf.map.api.MapPOIItem
+import net.daum.mf.map.api.MapPoint
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -71,8 +73,36 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
     }
+
+
+    //
+    //받아온 데이터 마커 위에 표시
+//    private fun setMissionMark(dataList: ArrayList<TargetMapData>, color:String) {
+//        for (data in dataList) {
+//
+//            2
+//            val marker = MapPOIItem()
+//            marker.apply {
+//
+//
+//
+//                mapPoint = MapPoint.mapPointWithGeoCoord(data.sf_latitude, data.sf_longitude)
+//                selectedMarkerType = MapPOIItem.MarkerType.RedPin
+//                isCustomImageAutoscale = false
+//                setCustomImageAnchor(0.5f, 1.0f)
+//
+//
+//
+//            }
+//            mapView.addPOIItem(marker)
+//
+//        }
+//
+//
+//
+//    }
+    //
 
 
 
