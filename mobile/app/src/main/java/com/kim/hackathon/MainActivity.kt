@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("abc", "keyhash : ${Utility.getKeyHash(this)}")
         var map_intent = Intent(this, MapActivity::class.java)
         var register_intent = Intent(this, RegisterRoomActivity::class.java)
         var myRoom_intent = Intent(this, MyRoom::class.java)
