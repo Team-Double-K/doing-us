@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ball_detail_view"
+    android:layout_width="350dp"
+    android:layout_height="350dp"
+    android:layout_margin="4px"
+    app:cardCornerRadius="8px">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp">
+
+        <TextView
+            android:id="@+id/ball_detail_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="장소명"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ball_detail_tv_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="상세정보"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/ball_detail_tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/ball_detail_tv_name" />
+
+
+        <TextView
+            android:id="@+id/ball_detail_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/ball_detail_tv_comments"
+            app:layout_constraintTop_toBottomOf="@+id/ball_detail_tv_comments" />
+
+        <TextView
+            android:id="@+id/ball_detail_tv_headcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="목표 인원 수"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/ball_detail_tv_date"
+            app:layout_constraintTop_toBottomOf="@+id/ball_detail_tv_date" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
