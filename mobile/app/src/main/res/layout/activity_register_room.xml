@@ -132,7 +132,7 @@
                     android:ems="10"
                     android:layout_gravity="bottom"
                     android:hint=""
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:textColor="#0064FF"
                     android:textColorHint="#7D8ED4" />
 
