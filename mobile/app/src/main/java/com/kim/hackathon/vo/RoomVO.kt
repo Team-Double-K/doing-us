@@ -16,8 +16,6 @@ data class RoomVO2 (
     var r_meet_date:String?,
     var r_headcount:Int?
 )
-
-<<<<<<< HEAD
 data class RoomVO3 (
     var title:String?,
     var comments:String?,
@@ -25,7 +23,7 @@ data class RoomVO3 (
     var latitude:Double?,
     var meetDate:String?,
     var headcount:Int?
-=======
+)
 data class RoomVO4 (
     var r_id:Int?,
     var r_ownerId:String?,
@@ -35,7 +33,6 @@ data class RoomVO4 (
     var r_latitude:Double?,
     var r_meet_date:String?,
     var r_headcount:Int?
->>>>>>> b
 )
 
 /**
