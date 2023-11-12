@@ -17,6 +17,15 @@ data class RoomVO2 (
     var r_headcount:Int?
 )
 
+data class RoomVO3 (
+    var title:String?,
+    var comments:String?,
+    var longitude:Double?,
+    var latitude:Double?,
+    var meetDate:String?,
+    var headcount:Int?
+)
+
 /**
  *  r_id int not null auto_increment primary key,
  *    r_owner_id varchar(255),

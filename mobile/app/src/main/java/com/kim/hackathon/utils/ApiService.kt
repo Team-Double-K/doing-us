@@ -1,6 +1,7 @@
 package com.kim.hackathon.utils
 import com.kim.hackathon.vo.RoomVO
 import com.kim.hackathon.vo.RoomVO2
+import com.kim.hackathon.vo.RoomVO3
 import com.kim.hackathon.vo.UserForJoinVO
 import com.kim.hackathon.vo.UserVO
 import okhttp3.ResponseBody
@@ -42,7 +43,7 @@ interface ApiService {
     @GET//url:8000/api/user/:userId/room/:roomId (콜론은 다 변수로 넣어 줘야 해 ~)
     fun findDetailOfRoomOfUserByUserIdAndRoomId(@Url url:String?):Call<ResponseBody>
     @POST
-    fun createRoomByUserId(@Url url: String?, @Body body:RoomVO?):Call<ResponseBody>
+    fun createRoomByUserId(@Url url: String?, @Body body: RoomVO3?,@Header("Authorization") token:String?):Call<ResponseBody>
     @POST
     fun joinRoomByUserIdAndRoomId(@Url url: String?):Call<ResponseBody>
     @DELETE // 방삭제 TODO: OWNER만 수행가능

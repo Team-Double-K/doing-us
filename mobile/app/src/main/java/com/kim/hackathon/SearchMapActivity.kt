@@ -6,6 +6,7 @@ import ListLayout
 import ResultSearchKeyword
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kim.hackathon.config.LocationManger
 import com.kim.hackathon.databinding.ActivitySearchLocationBinding
@@ -35,7 +37,7 @@ class SearchMapActivity : AppCompatActivity() {
     private var uLongitude : Double = 0.0
     companion object {
         const val BASE_URL = "https://dapi.kakao.com/"
-        const val API_KEY = "KakaoAK adf7a24378327ceec425ec5dfd86de82" // REST API 키
+        const val API_KEY = "KakaoAK 5d0e5bef4396f4e47333a553f631dfa3" // REST API 키
     }
 
     private lateinit var searchmapbinding : ActivitySearchLocationBinding
@@ -77,10 +79,15 @@ class SearchMapActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         searchmapbinding = ActivitySearchLocationBinding.inflate(layoutInflater)
         setContentView(searchmapbinding.root)
+        var register_intent = Intent(this, RegisterRoomActivity::class.java)
 
         com.kim.hackathon.config.init()
 
-
+        searchmapbinding.etSearchField.addTextChangedListener {
+            keyword = searchmapbinding.etSearchField.text.toString()
+            pageNumber = 1
+            searchKeyword(keyword, pageNumber)
+        }
 // 리사이클러 뷰
         searchmapbinding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         searchmapbinding.rvList.adapter = listAdapter
@@ -98,10 +105,10 @@ class SearchMapActivity : AppCompatActivity() {
         })
 
 // 검색 버튼
-        searchmapbinding.btnSearch.setOnClickListener {
-            keyword = searchmapbinding.etSearchField.text.toString()
-            pageNumber = 1
-            searchKeyword(keyword, pageNumber)
+        searchmapbinding.checkBtn.setOnClickListener {
+
+            finish()
+            startActivity(register_intent)
         }
 
 // 이전 페이지 버튼
