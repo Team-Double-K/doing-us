@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#00000000">
 
     <!-- 네모 박스로 감싸기 -->
     <androidx.cardview.widget.CardView
@@ -12,14 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         cardview:cardCornerRadius="8dp"
-        cardview:cardElevation="4dp">
+        cardview:cardElevation="4dp"
+        android:background="#00000000">
 
         <!-- 각 항목 내용 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:background="#00000000">
 
             <!-- 내용 표시 TextView -->
             <TextView
@@ -53,7 +56,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:text="삭제" />
+                android:backgroundTint="#0064FF"
+                android:text="나가기" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#0000FF" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

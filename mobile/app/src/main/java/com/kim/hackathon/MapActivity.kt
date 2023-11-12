@@ -58,7 +58,7 @@ class MarkerEventListener(val context: Context): MapView.POIItemEventListener {
             // Update the views with the data from roomDetail
             binding.ballDetailTvName.text = roomDetail.r_title.toString()
             binding.ballDetailTvComments.text = roomDetail.r_comments.toString()
-            binding.ballDetailTvDate.text= "모이는 날 ${roomDetail.r_meet_date.split("|").joinToString(", ")}"
+            binding.ballDetailTvDate.text= "모이는 날 : ${roomDetail.r_meet_date.split("|").joinToString(", ")}"
             binding.ballDetailTvHeadcount.text = "인원 : ${roomDetail.r_cur_headcount}/${roomDetail.r_headcount}"
             setView(binding.root)
             setNeutralButton("Cancel"){ dialog, which ->
@@ -68,10 +68,10 @@ class MarkerEventListener(val context: Context): MapView.POIItemEventListener {
             }
             setPositiveButton("참가"){
                     dialog, which ->
-                {
+
                     joinRoom(roomDetail.r_id)
                     dialog.dismiss()
-                }
+
             }
             setCancelable(true)
             show()
@@ -320,7 +320,6 @@ class MapActivity : AppCompatActivity() {
             //markerType = MapPOIItem.MarkerType.CustomImage          // 마커 모양 (커스텀)
             //customImageResourceId = R.drawable.maker1              // 커스텀 마커 이미지
             markerType= MapPOIItem.MarkerType.YellowPin
-            selectedMarkerType = MapPOIItem.MarkerType.RedPin
             setCustomImageAnchor(0.5f, 1.0f)    // 마커 이미지 기준점
             isShowCalloutBalloonOnTouch = false // 풍선뷰 터치 이벤트 비활성화
 
