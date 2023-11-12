@@ -37,13 +37,17 @@ class RegisterUserActivity : AppCompatActivity() {
             val year = register_user_binding.datePicker.year
             val month = register_user_binding.datePicker.month + 1 // 월은 0부터 시작하므로 1을 더해줍니다.
             val day = register_user_binding.datePicker.dayOfMonth
+            if(input_userId == ""||input_userPw==""||input_userName==""){
+                Toast.makeText(this, "빈칸을 채워주세요", Toast.LENGTH_SHORT).show()
+            }else {
+                val formattedDate = String.format("%04d-%02d-%02d", year, month, day)
 
-            val formattedDate = String.format("%04d-%02d-%02d", year, month, day)
+                Log.d("data", "${formattedDate}")
 
-            Log.d("data", "${formattedDate}")
-
-            val userRequestVO:UserForJoinVO? = UserForJoinVO(input_userId, input_userPw, input_userName, formattedDate)
-            join(userRequestVO)
+                val userRequestVO: UserForJoinVO? =
+                    UserForJoinVO(input_userId, input_userPw, input_userName, formattedDate)
+                join(userRequestVO)
+            }
         }
     }
 
