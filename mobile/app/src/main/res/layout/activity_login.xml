@@ -10,12 +10,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="두잉 - 둘"
+        android:text="DoingUs"
         android:layout_gravity="center"
         android:layout_marginTop="180dp"
         android:textColor="#0064FF"
         android:textSize="80sp"
         android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="함께하는 성장"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#0064FF"
+        android:textSize="20sp" />
 
 
     <EditText
