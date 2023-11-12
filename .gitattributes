@@ -1,3 +1,2 @@
-*.js linguist-detectable=true
-*.js linguist-language=javascript
-*.js linguist-style=prettier
+* linguist-vendored
+*.js linguist-vendored=false
