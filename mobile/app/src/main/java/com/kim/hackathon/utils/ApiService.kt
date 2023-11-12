@@ -1,11 +1,8 @@
 package com.kim.hackathon.utils
 import com.kim.hackathon.vo.RoomVO
 import com.kim.hackathon.vo.RoomVO2
-<<<<<<< HEAD
 import com.kim.hackathon.vo.RoomVO3
-=======
 import com.kim.hackathon.vo.RoomVO4
->>>>>>> b
 import com.kim.hackathon.vo.UserForJoinVO
 import com.kim.hackathon.vo.UserVO
 import okhttp3.ResponseBody
