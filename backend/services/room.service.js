@@ -1,12 +1,29 @@
 const { connection } = require("../config/db.config");
 
 class RoomService {
+  static findRoomByRoomId(roomId) {}
   static findAll() {
     return new Promise((resolve, reject) => {
-      connection.query("select * from room", (err, result) => {
-        if (err) reject(err);
-        resolve(result);
-      });
+      connection.query(
+        `select room.r_id, room.r_owner_id, room.r_title, room.r_comments, room.r_longitude, room.r_latitude,
+      room.r_meet_date,room.r_headcount,cnt_table.total_headcount as r_cur_headcount from room ,(
+      SELECT room_data.r_id, room_data.r_cur_headcount + COALESCE(user_data.r_cur_headcount, 0) AS total_headcount
+      FROM (
+          SELECT room.r_id, COUNT(*) AS r_cur_headcount
+          FROM user_join_room
+          JOIN room ON user_join_room.r_id = room.r_id
+          GROUP BY room.r_id
+      ) AS user_data
+      RIGHT JOIN (
+          SELECT r_id, COUNT(*) AS r_cur_headcount
+          FROM room
+          GROUP BY r_id
+      ) AS room_data ON user_data.r_id = room_data.r_id)as cnt_table where room.r_id = cnt_table.r_id`,
+        (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        }
+      );
     });
   }
   static joinRoomByUserIdAndRoomId(userId, roomId) {

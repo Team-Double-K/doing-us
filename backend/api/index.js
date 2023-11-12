@@ -11,7 +11,6 @@ const {
 const {
   findUser,
   findUserByUserId,
-  findUserByRoomId,
 } = require("../controllers/user.controller");
 const {
   defaultGuardMiddleware,
