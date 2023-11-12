@@ -49,7 +49,7 @@ interface ApiService {
     @POST
     fun createRoomByUserId(@Url url: String?, @Body body: RoomVO3?,@Header("Authorization") token:String?):Call<ResponseBody>
     @POST
-    fun joinRoomByUserIdAndRoomId(@Url url: String?):Call<ResponseBody>
+    fun joinRoomByUserIdAndRoomId(@Url url: String?, @Header("Authorization") token:String?):Call<ResponseBody>
     @DELETE // 방삭제 TODO: OWNER만 수행가능
     fun deleteRoomByUserIdAndRoomId(@Url url:String?,@Header("Authorization") token:String?):Call<ResponseBody>
     @PUT // 방나가기 TODO: OWNER를 제외한 anyuser 다 가능

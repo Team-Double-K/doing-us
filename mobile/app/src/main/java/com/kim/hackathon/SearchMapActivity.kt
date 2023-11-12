@@ -37,7 +37,7 @@ class SearchMapActivity : AppCompatActivity() {
     private var uLongitude : Double = 0.0
     companion object {
         const val BASE_URL = "https://dapi.kakao.com/"
-        const val API_KEY = "KakaoAK 5d0e5bef4396f4e47333a553f631dfa3" // REST API 키
+        const val API_KEY = "KakaoAK adf7a24378327ceec425ec5dfd86de82" // REST API 키
     }
 
     private lateinit var searchmapbinding : ActivitySearchLocationBinding

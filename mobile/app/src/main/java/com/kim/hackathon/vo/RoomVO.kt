@@ -26,14 +26,17 @@ data class RoomVO3 (
 )
 data class RoomVO4 (
     var r_id:Int?,
-    var r_ownerId:String?,
+    var r_owner_id:String?,
     var r_title:String?,
     var r_comments:String?,
     var r_longitude:Double?,
     var r_latitude:Double?,
     var r_meet_date:String?,
-    var r_headcount:Int?
+    var r_headcount:Int?,
+    var r_cur_headcount:Int?
 )
+
+
 
 /**
  *  r_id int not null auto_increment primary key,

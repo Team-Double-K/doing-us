@@ -39,7 +39,7 @@ class RoomAdapter : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_room, parent, false)
-        //adapter = this  // adapter 변수 초기화
+        adapter = this  // adapter 변수 초기화
         return RoomViewHolder(view)
     }
 
