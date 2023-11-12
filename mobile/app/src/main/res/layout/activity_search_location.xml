@@ -36,20 +36,20 @@
             android:hint="장소 입력"
             android:inputType="textPersonName"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_search"
-            app:layout_constraintEnd_toStartOf="@+id/btn_search"
+            app:layout_constraintBottom_toBottomOf="@+id/check_btn"
+            app:layout_constraintEnd_toStartOf="@+id/check_btn"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_search"
+            app:layout_constraintTop_toTopOf="@+id/check_btn"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/btn_search"
+            android:id="@+id/check_btn"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:backgroundTint="#0064FF"
-            android:text="검색"
+            android:text="확인"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +62,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_nextPage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+            app:layout_constraintTop_toBottomOf="@+id/check_btn" />
 
         <Button
             android:id="@+id/btn_prevPage"
