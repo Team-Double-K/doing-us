@@ -1,9 +1,19 @@
-## Project Name
-### doingUs(두잉어스)
 
 ## 팀명
 
-### double-k(더블 케이)
+- double-k(더블 케이)
+
+## Project Name
+- doingUs(두잉어스)
+  
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/e5d539bc-bc35-47ee-a55e-3af7070d6ba7" alt="image" width="80px">
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/9db52fd7-b3e3-4ee2-8770-d6da25074ef7" alt="image" width="80px">
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/3249e4ae-a998-4965-ae90-0c840e6a8c22" alt="image" width="80px">
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/4af9900b-8e9d-4c2a-b05a-d06a1b712262" alt="image" width="80px">
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/f32d1516-9a1d-41fb-b6f9-e50a67e3040e" alt="image" width="80px">
+  <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/f83f9bff-26ce-4bbc-8454-e81e539b151a" alt="image" width="80px">
+
+  *위 사진은 "로그인, 회원가입, 메인페이지, 모임찾기, 모임생성, 내가 현재 속한 모임" 순서로 UI가 배치되어있습니다.*
 
 ## 목차
 
