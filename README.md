@@ -17,7 +17,7 @@
 
 - 시연영상 url(youtube)
 
-  https://www.youtube.com/watch?v=pzGHxS9zHoY
+  [https://www.youtube.com/watch?v=pzGHxS9zHoY](https://youtu.be/MuZipRTFFbM?si=6F4ejZWnf4BUEFOf)
 ## 목차
 
 - [1. 제출 타입 및 주체](#1-제출-타입-및-주제)
