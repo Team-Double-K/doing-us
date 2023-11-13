@@ -3,7 +3,7 @@
 
 - double-k(더블 케이)
 
-## Project Name
+## 프로젝트 이름
 - doingUs(두잉어스)
   
   <img src="https://github.com/Team-Double-K/doing-us/assets/126179088/e5d539bc-bc35-47ee-a55e-3af7070d6ba7" alt="image" width="80px">
